@@ -1,0 +1,96 @@
+@import "./base/master.scss";
+@import "./vendor/master.scss";
+@import "./components/master.scss";
+@import "./layout/master.scss";
+@import "./pages/master.scss";
+
+// HACK->
+img {
+    vertical-align: middle;
+}
+//<-
+%centered {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /*background-color: #f8f8f8;*/
+}
+
+a {
+    text-decoration: none;
+    color: $color-text;
+
+    &:hover {
+        color: $color-accent;
+    }
+
+    &.active {
+        color: $color-primary;
+    }
+}
+
+aside {
+    padding: 36px 0 34px;
+    line-height: 48px;
+    width: 280px;
+    background-color: $gray;
+    text-align: center;
+
+    p {
+        width: 169px;
+        margin: 0 auto;
+    }
+
+    & > h1 {
+        text-align: center;
+        width: 205px;
+    }
+}
+
+footer {
+
+  & > div {
+    background-color: $magenta-color;
+
+    & > div {
+      padding: 59px 0 13px;
+
+      .social {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+      }
+      text-align: center;
+      p {
+        padding: 33px 0 50px;
+        color: $white;
+      }
+    }
+
+    a {
+      background: url(/Content/images/icons.png) no-repeat;
+      height: 30px;
+      margin: 0 15px;
+      padding: 0;
+      width: 30px;
+
+      &.facebook {
+        background-position: 0 0;
+      }
+      &.googleplus {
+        background-position: 0 -32px;
+      }
+      &.pinterest {
+        background-position: 0 -64px;
+      }
+      &.twitter {
+        background-position: 0 -96px;
+      }
+    }
+  }
+}

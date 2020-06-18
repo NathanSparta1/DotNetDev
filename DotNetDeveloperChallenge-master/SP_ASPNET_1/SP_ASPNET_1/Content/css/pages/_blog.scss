@@ -1,0 +1,76 @@
+﻿
+.Blog{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.Blog__Posts {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+.Posts__Item {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.Posts__Item__Link{
+    text-align: center;
+}
+
+.Post__Hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.Posts__Featured{
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 620px;
+    list-style: none;
+    li{
+        margin-right: 10px;
+    }
+}
+.SinglePost {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 620px;
+}
+
+.Posts__Recent {
+    width: 280px;
+    background-color: $gray;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-flow: column nowrap;
+
+    & > * {
+        max-width: 200px;
+    }
+
+    .Posts__Recent-title {
+        color: $magenta;
+        margin: 0;
+        padding: 42px 0 29px;
+        text-align: center;
+        text-transform: capitalize;
+        background-color: inherit;
+    }
+}
+
+.Blog__Post-Preview {
+}
+
+.Post__Image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+

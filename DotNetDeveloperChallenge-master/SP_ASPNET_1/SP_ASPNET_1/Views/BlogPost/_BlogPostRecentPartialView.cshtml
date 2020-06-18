@@ -1,0 +1,21 @@
+﻿@using SP_ASPNET_1.BusinessLogic
+@model SP_ASPNET_1.ViewModels.BlogSinglePostViewModel
+
+<div class="Posts__Recent">
+    <h1 class="Posts__Recent-title">recent post</h1>
+    @if (Model != null)
+    {
+    <img src="@Html.AttributeEncode(Constants.POST_IMAGE_PREFIX + Model.BlogPost.ImageUrl)" alt="post image preview" class="Post__Image">
+    <div class="Post-Preview__Content">
+        <h2>@Model.BlogPost.Title</h2>
+        <p>By @Model.Author on @Model.BlogPost.DateTime.ToString(Constants.DISPLAY_DATETIME_FORMAT)</p>
+        <br>
+        <p>@Model.BlogPost.Content.Substring(0,Model.BlogPost.Content.Length )...</p>
+        <button onClick="location.href='@Url.Action("SinglePost", new { id = Model.BlogPost.BlogPostID})'" class="c-btn c-btn--dark">read more</button>
+    </div>
+    }
+    else
+    {
+    <h2>There is no recent post :-(</h2>
+    }
+</div>

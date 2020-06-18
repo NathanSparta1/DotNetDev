@@ -1,0 +1,64 @@
+﻿.flier {
+    background-color: #f8f8f8;
+}
+.flier__picture {
+    max-width: 1126px;
+    margin: 0px auto;
+    position: relative;
+    text-align: center;
+
+    & > a {
+        &:hover {
+            color: white;
+        }
+
+        background: url(/Content/images/icons.png) no-repeat 0 -128px;
+        position: absolute;
+        color: $white;
+        font-size: 24px;
+        padding: 52px 0 0;
+        height: 156px;
+        width: 156px;
+        bottom: 50px;
+        right: 100px;
+    }
+}
+
+.home__footer {
+    background-color: $color-accent;
+
+    ul {
+        width: 960px;
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 36px 0 32px;
+    }
+
+    a {
+        background: url($icon-path) no-repeat;
+        display: block;
+        height: 44px;
+        margin: 0 auto 22px;
+        padding: 0;
+        width: 80px;
+
+        &.product {
+            background-position: 0 -372px;
+        }
+
+        &.about {
+            background-position: 0 -418px;
+        }
+
+        &.flavour {
+            background-position: 0 -280px;
+        }
+
+        &.contact {
+            background-position: 0 -326px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+﻿.c-btn {
+    padding: 10px 20px;
+    background-color: white;
+    height: 40px;
+    width: 160px;
+    border: 2px solid #cbb5bc;
+    text-transform: uppercase;
+
+    &:hover {
+        cursor: pointer;
+    }
+    color: $kiwi;
+}
+
+.c-btn--white {
+    background-color: white;
+}
+
+.c-btn--dark {
+    background-color: $gray;
+    color: $darkGray
+}
+
+ul li .c-btn {
+    color: $color-accent;
+}

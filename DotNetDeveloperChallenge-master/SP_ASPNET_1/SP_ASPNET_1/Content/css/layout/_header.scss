@@ -1,0 +1,61 @@
+﻿.header {
+    padding: 41px 10px 27px;
+    background-color: $gray;
+    display: flex;
+    justify-content: center;
+
+
+    .header__navbar {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 960px;
+
+        .spacer {
+            flex-grow: 1;
+        }
+
+        img {
+            height: 36px;
+        }
+
+        nav {
+            ul {
+                list-style: none;
+            }
+
+            & > ul {
+                display: flex;
+                flex-flow: row nowrap;
+
+                & > li {
+                    text-align: center;
+                    padding: 0 35px;
+
+                    ul {
+                        position: absolute;
+                        padding: 0;
+
+                        li {
+                            visibility: hidden;
+                            background-color: $gray;
+                            padding: 5px;
+                            border-radius: 1px;
+
+                            .active {
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        ul {
+                            li {
+                                visibility: visible;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

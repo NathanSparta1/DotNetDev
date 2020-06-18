@@ -1,0 +1,22 @@
+﻿@using SP_ASPNET_1.Models
+@using SP_ASPNET_1.BusinessLogic
+@model SP_ASPNET_1.ViewModels.HomeProductViewModel
+
+<div class="product">
+    @foreach (ProductLine productLine in Model.ProductLines)
+    {
+        <div class="product__edition-lineup">
+            <div>
+                <h2>@productLine.Title</h2>
+                <p>@productLine.Description</p>
+            </div>
+            @foreach (ProductItem productItem in productLine.ProductItems)
+            {
+                <div>
+                    <img src="@Html.AttributeEncode(Constants.PRODUCT_IMAGE_PREFIX + productItem.ImageURL)" alt="@productItem.ImageAlt">
+                    <h2 class="h2--smaller">@productItem.Title</h2>
+                </div>
+            } 
+        </div>
+    }
+</div>

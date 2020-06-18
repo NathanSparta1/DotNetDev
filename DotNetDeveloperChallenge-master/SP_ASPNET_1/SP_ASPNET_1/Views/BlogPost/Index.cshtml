@@ -1,0 +1,45 @@
+﻿@using SP_ASPNET_1.BusinessLogic
+@using SP_ASPNET_1.Models
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@{ Layout = "~/Views/Shared/Blog/_BlogLayout.cshtml"; }
+
+@if (Model.BlogPosts != null)
+{
+    <ul class="Posts__Featured">
+        @foreach (BlogPost post in Model.BlogPosts)
+        {
+            <li class="Posts__Item">
+                <img src="@Html.AttributeEncode(Constants.POST_IMAGE_PREFIX + post.ImageUrl)" alt="post image preview" class="Post__Image">
+                <div class="Post-Preview__Content">
+                    <h2>@post.Title</h2>
+                    <p>By @post.Author on @post.DateTime.ToString(Constants.DISPLAY_DATETIME_FORMAT)</p>
+                    <br>
+                    <p>@post.Content.Substring(0, post.Content.Length)...</p>
+                    <p>@post.Likes Likes</p>
+                </div>
+            </li>
+            <li class="Posts__Item__Link">
+                <button onClick="location.href='@Url.Action("SinglePost", new { id = @post.BlogPostID})'" class="c-btn">read more</button>
+                
+
+
+                <hr class="Post__Hr" />
+            </li>
+        }
+    <li>
+        <button class="c-btn">load more</button>
+        
+        @Html.ActionLink("Create New Post","Create")
+
+
+    </li>
+
+    </ul>
+}
+else
+{
+    <h1>There are no blog posts :-(</h1>
+}

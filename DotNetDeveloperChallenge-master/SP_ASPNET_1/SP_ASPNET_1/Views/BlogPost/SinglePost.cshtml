@@ -1,0 +1,33 @@
+﻿@using SP_ASPNET_1.BusinessLogic
+@model SP_ASPNET_1.ViewModels.BlogSinglePostViewModel
+
+@*@{
+        ViewBag.Title = "SinglePost";
+    }*@
+@{ Layout = "~/Views/Shared/Blog/_BlogLayout.cshtml"; }
+
+@if (Model != null)
+{
+    <div class="SinglePost">
+        <img src="@Html.AttributeEncode(Constants.POST_IMAGE_PREFIX + Model.BlogPost.ImageUrl)" alt="@Path.GetFileNameWithoutExtension(Model.BlogPost.ImageUrl)" />
+        <h2>@Model.BlogPost.Title</h2>
+        <p>By @Model.Author.ToString() on @Model.BlogPost.DateTime.ToString(Constants.DISPLAY_DATETIME_FORMAT)</p>
+        <p>
+            @Model.BlogPost.Content
+        </p>
+        <p>
+            @Model.BlogPost.Likes Likes
+        </p>
+        <p>
+            <button>Like Post</button>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.BlogPost.BlogPostID }) |
+            @Html.ActionLink("Back to List", "Index") |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.BlogPost.BlogPostID }) |
+        </p>
+    </div> }
+else
+{
+<div class="SinglePost">
+    <h2>There are no blog posts :-(</h2>
+</div>
+}

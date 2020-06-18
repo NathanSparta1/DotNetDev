@@ -1,0 +1,18 @@
+﻿
+
+@using SP_ASPNET_1.Models
+@using SP_ASPNET_1.BusinessLogic
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="Blog">
+    <h1 class="text--white">@ViewBag.Title</h1>
+    <div class="Blog__Posts">
+        @RenderBody()
+        @{
+            Html.RenderAction("LatestPost", "BlogPost");
+        }
+    </div>
+</main>

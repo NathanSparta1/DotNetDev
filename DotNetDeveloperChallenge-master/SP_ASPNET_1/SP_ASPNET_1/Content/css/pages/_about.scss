@@ -1,0 +1,16 @@
+﻿.about {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 40px 0 110px;
+    justify-content: center;
+}
+
+.about__content {
+    max-width: 560px;
+    padding: 0 0 0 30px;
+}
+
+.about__flier {
+    background-color: $gray;
+    text-align: center;
+}

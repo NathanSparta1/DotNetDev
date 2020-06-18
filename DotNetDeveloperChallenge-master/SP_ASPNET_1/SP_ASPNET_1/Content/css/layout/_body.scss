@@ -1,0 +1,28 @@
+﻿.body {
+    @extend %centered;
+
+    & > * {
+        width: 100%;
+    }
+}
+
+.body__article {
+    background-color: $gray;
+    display: block;
+    width: 100vw;
+    & > div {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+}
+.body__article__text-content {
+    h3 {
+        margin: 47px 0 18px;
+    }
+
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 560px;
+    padding-left: 40px;
+}
