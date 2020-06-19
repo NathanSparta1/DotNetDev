@@ -16,11 +16,18 @@
             <img #logo src="~/Content/images/logo.png" /> <span class="spacer"></span>
             <nav>
                 <ul>
-                    <li><a href="@Url.Action("Index", "Home")" class="@(@Html.IsActive("Home", "Index"))">HOME</a></li>
+                    <li><a href="@Url.Action("Index", "Home")" class="@(@Html.IsActive("Home", "Index"))">HOME</a>
+                    <ul>
+                        <li> <a href="@Url.Action("Index", "Users")" class="@(@Html.IsActive("Users", "Index"))">USERS</a></li>
+                    </ul>
+                    
+                    </li>
                     <li>
                         <a href="@Url.Action("About", "Home")" class="@(@Html.IsActive("Home", "About"))">ABOUT</a>
+                        
                         <ul>
-                            <li><a href="@Url.Action("Product", "Home")" class="@(@Html.IsActive("Home", "Product"))">PRODUCT</a></li>
+                            <li><a href="@Url.Action("Product", "Home")" class="@(@Html.IsActive("Home", "Product"))">PRODUCT</a>
+                               </li>
                         </ul>
                     </li>
                     <li>

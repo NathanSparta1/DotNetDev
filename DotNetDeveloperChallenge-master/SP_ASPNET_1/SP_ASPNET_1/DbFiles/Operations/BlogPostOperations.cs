@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using PagedList;
+using PagedList.Mvc;
 
 namespace SP_ASPNET_1.DbFiles.Operations
 {
