@@ -9,6 +9,7 @@ using System.Net;
 using PagedList;
 using PagedList.Mvc;
 using System.Data.Entity;
+using System.Linq;
 
 namespace SP_ASPNET_1.Controllers
 {
@@ -21,16 +22,18 @@ namespace SP_ASPNET_1.Controllers
 
         [Route("")]
         [HttpGet]
-        public ActionResult Index(string searchBy, string search, int? page)
+        public ActionResult Index(int? page)
         {
             //return this.View();
             BlogIndexViewModel result = this._blogPostOperations.GetBlogIndexViewModel();
 
             ViewBag.Title = "Blog";
             return this.View(result);
+
+            
         }
         
-        public ActionResult Index( int? page)
+       /* public ActionResult Index( int? page)
         {
             //return this.View();
             BlogIndexViewModel result = this._blogPostOperations.GetBlogIndexViewModel();
@@ -38,36 +41,13 @@ namespace SP_ASPNET_1.Controllers
 
             ViewBag.Title = "Blog";
             return this.View(db.BlogPosts.ToPagedList(page ?? 1,3));
-        }
+        }*/
 
 
         
 
 
-        /*public ActionResult Index(string sortOrder)
-        {
-            ViewData["BlogNameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["AuthorNameSortParm"] = sortOrder == "AuthorName" ? "AName_desc" : "AuthorName";
-            BlogPost post;
-            var Blogs = from b in 
-                           select b;
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    students = students.OrderByDescending(s => s.LastName);
-                    break;
-                case "Date":
-                    students = students.OrderBy(s => s.EnrollmentDate);
-                    break;
-                case "date_desc":
-                    students = students.OrderByDescending(s => s.EnrollmentDate);
-                    break;
-                default:
-                    students = students.OrderBy(s => s.LastName);
-                    break;
-            }
-            return View(await students.AsNoTracking().ToListAsync());
-        }*/
+        
 
 
 
@@ -198,14 +178,8 @@ namespace SP_ASPNET_1.Controllers
         }
 
 
-        /*public ActionResult LikePost()
-        {
-
-            Contexts.IceCreamBlogContext db = new Contexts.IceCreamBlogContext();
-
-
-
-        }*/
+       
+        
 
 
     }

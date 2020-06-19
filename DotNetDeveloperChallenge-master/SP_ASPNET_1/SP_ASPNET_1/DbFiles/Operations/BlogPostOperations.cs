@@ -73,13 +73,13 @@ namespace SP_ASPNET_1.DbFiles.Operations
                     "Author")
                 .ToList();
 
-            if(posts.Count is 0)
+            if (posts.Count is 0)
             {
                 return null;
             }
 
             Random rnd = new Random();
-            
+
             var randomPost = posts[rnd.Next(posts.Count)];
             return randomPost.ToBlogSinglePostViewModel();
         }
@@ -111,8 +111,27 @@ namespace SP_ASPNET_1.DbFiles.Operations
                 Console.WriteLine(e);
                 throw;
             }
+
+        }
+
+        public void LikePost(int id)
+        {
+            int increment = 1;
             
+
+            DbFiles.Contexts.IceCreamBlogContext db1 = new DbFiles.Contexts.IceCreamBlogContext();
+
+            using (var db = new DbFiles.Contexts.IceCreamBlogContext())
+            {
+                BlogPost post = db.BlogPosts.Find(id);
+                post.Likes += increment;
+            }
+
+        
+
         }
 
     }
+
+       
 }

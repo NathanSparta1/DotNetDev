@@ -19,6 +19,7 @@ namespace SP_ASPNET_1.DbFiles.Contexts
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<ProductLine> ProductLines { get; set; }
         public DbSet<ProductItem> ProductItems { get; set; }
+        public DbSet<Users> Users { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
